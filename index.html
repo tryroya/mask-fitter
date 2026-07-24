@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaskFitter — Find your best-match CPAP mask · by Orma Sleep</title>
+<meta name="description" content="MaskFitter is a consumer fit tool from Orma Sleep. A quick scan measures your face's fit geometry and matches you to CPAP mask styles and sizes that suit it. Product recommendations only — not medical advice.">
+<meta property="og:title" content="MaskFitter — Find your best-match CPAP mask">
+<meta property="og:description" content="Fit geometry in, mask styles and sizes out. A consumer fit tool by Orma Sleep — product recommendations only, never medical advice.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2300657C'/%3E%3Cstop offset='1' stop-color='%23012733'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23E2C342' stroke-width='7' stroke-linecap='round' stroke-dasharray='80 15'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#00657C;--teal-10:rgba(0,101,124,.10);--teal-05:rgba(0,101,124,.05);--teal-glow:rgba(0,101,124,.18);--gold:#E2C342;--gold-10:rgba(226,195,66,.10);--gold-glow:rgba(226,195,66,.22);--deep:#012733;--cool:#0DA6B2;--cool-10:rgba(13,166,178,.10);--lgold:#F3ED86;--white:#fff;--snow:#F7F9FB;--ink:#0B2A35;--body:#3A5C68;--mute:#7A9BA8;--line:rgba(0,101,124,.07);--nav-h:68px;--max-w:1100px;--sec-y:118px}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 36px}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:var(--nav-h);background:rgba(255,255,255,.88);backdrop-filter:blur(18px) saturate(1.6);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 24px rgba(0,40,55,.06)}
+nav .wrap{display:flex;align-items:center;height:100%;justify-content:space-between;gap:16px}
+.mark{text-decoration:none;font-weight:700;font-size:1.2rem;color:var(--teal);letter-spacing:.2px}
+.mark .o{color:var(--gold)}
+.nav-mid{display:flex;gap:6px;list-style:none}
+.nav-mid a{font-size:.8rem;font-weight:500;color:var(--mute);text-decoration:none;padding:6px 13px;border-radius:8px;transition:.2s}
+.nav-mid a:hover{color:var(--teal);background:var(--teal-05)}
+.nav-end a{font-size:.78rem;font-weight:600;color:#fff;background:var(--teal);padding:9px 20px;border-radius:10px;text-decoration:none;transition:.2s;white-space:nowrap}
+.nav-end a:hover{background:#005468;box-shadow:0 4px 16px var(--teal-glow)}
+/* hero */
+.hero{padding:calc(var(--nav-h) + 60px) 0 84px;background:linear-gradient(170deg,var(--snow) 0%,var(--white) 50%,var(--teal-05) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.08fr 1fr;gap:56px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:var(--gold-10);color:#9B8520;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.13em;padding:5px 16px;border-radius:100px;margin-bottom:20px}
+.hero-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+h1{font-size:clamp(2.1rem,4.2vw,3.15rem);font-weight:700;line-height:1.12;letter-spacing:-.025em;color:var(--deep);margin-bottom:20px;max-width:15ch}
+h1 .gold{color:var(--gold)}
+.hero p.lead{font-size:1rem;color:var(--body);max-width:52ch;line-height:1.78;margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--deep);padding:13px 28px;border-radius:12px;font-size:.9rem;font-weight:600;text-decoration:none;transition:.25s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--gold-glow)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--teal);padding:13px 28px;border-radius:12px;font-size:.9rem;font-weight:600;text-decoration:none;transition:.25s;border:1.5px solid var(--line)}
+.btn-outline:hover{border-color:var(--teal);background:var(--teal-05)}
+.cta-note{display:block;margin-top:16px;font-size:.82rem;color:var(--mute)}
+/* ── phone hero (iPhone mockup, 3 auto-cycling app screens) ── */
+.phone-hero{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ph-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;animation:phDrift 14s ease-in-out infinite alternate}
+.ph-glow.g1{width:340px;height:340px;background:rgba(226,195,66,.26);bottom:-40px;left:6%}
+.ph-glow.g2{width:300px;height:300px;background:rgba(13,166,178,.22);top:-50px;right:4%;animation-delay:4s}
+.ph-ring{position:absolute;border-radius:50%;border:16px solid rgba(226,195,66,.10);z-index:0;animation:phBreathe 7.5s ease-in-out infinite}
+.ph-ring.k1{width:420px;height:420px;top:-90px;right:-70px}
+.ph-ring.k2{width:300px;height:300px;bottom:-60px;left:-60px;border-color:rgba(13,166,178,.09);animation-delay:1.4s}
+.phone{position:relative;width:min(300px,80vw);aspect-ratio:390/844;background:#0B1418;border-radius:48px;padding:11px;box-shadow:0 34px 90px rgba(0,40,55,.32),inset 0 0 0 2px rgba(255,255,255,.07);z-index:2}
+.ph-island{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:84px;height:23px;border-radius:13px;background:#0B1418;z-index:6}
+.ph-screen{position:relative;width:100%;height:100%;border-radius:38px;overflow:hidden;background:var(--snow)}
+.ph-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s .7s;display:flex;flex-direction:column;padding:52px 16px 16px;background:var(--snow)}
+.ph-slide.on{opacity:1;visibility:visible;transition:opacity .7s ease,visibility 0s}
+.ph-slide.cam{background:linear-gradient(180deg,#03141B 0%,#07303F 100%);color:#fff}
+.ph-status{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:13px 24px 0;font-size:11px;font-weight:600;z-index:5;color:var(--deep)}
+.ph-slide.cam~.x, .ph-status.lite{color:#fff}
+.ph-dots{display:flex;gap:8px;justify-content:center;margin-top:20px;z-index:2}
+.ph-dots span{width:7px;height:7px;border-radius:99px;background:rgba(0,101,124,.18);transition:.35s}
+.ph-dots span.on{background:var(--teal);width:22px}
+@keyframes phBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes phDrift{from{transform:translate(0,0)}to{transform:translate(26px,-18px)}}
+/* in-phone app UI */
+.app-bar{display:flex;align-items:center;gap:7px;font-weight:700;font-size:12.5px;color:var(--teal);margin-bottom:12px}
+.app-bar .dot{width:14px;height:14px;border-radius:50%;border:3.5px solid var(--gold)}
+.app-bar small{margin-left:auto;font-weight:500;color:var(--mute);font-size:9.5px}
+.app-title{font-size:16.5px;font-weight:700;color:var(--deep);line-height:1.25}
+.app-sub{font-size:10.5px;color:#5E7A83;margin-top:3px;line-height:1.5}
+.app-card{background:#fff;border:1px solid #E2EEF1;border-radius:13px;padding:11px 12px;margin-top:9px}
+.app-row{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:500;color:var(--ink)}
+.app-row .tick{width:17px;height:17px;border-radius:50%;background:#E8F6EE;color:#178A4C;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.app-row small{color:var(--mute);font-weight:400;font-size:9.5px;display:block;line-height:1.35}
+.app-btn{margin-top:auto;background:var(--gold);color:var(--deep);font-weight:700;border-radius:12px;padding:12px;text-align:center;font-size:12.5px}
+.app-note{font-size:9.5px;color:var(--mute);text-align:center;margin-top:8px;line-height:1.4}
+.fitbar{height:5px;border-radius:99px;background:#E2EEF1;margin-top:7px;overflow:hidden}
+.fitbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cool),var(--teal))}
+.fitlab{font-size:9px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.08em}
+.bigsize{margin:10px 0 2px;font-size:44px;font-weight:800;color:var(--deep);line-height:1}
+.bigsize small{font-size:13px;font-weight:600;color:var(--teal)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chips span{font-size:9.5px;font-weight:600;background:var(--teal-10);color:var(--teal);border-radius:99px;padding:4px 9px}
+.cam-mid{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+.cam-oval{width:66%;aspect-ratio:.78;border:2.5px dashed rgba(255,255,255,.75);border-radius:50%}
+.cam-cap{text-align:center;font-size:11px;font-weight:500;margin-top:4px}
+.cam-chip{margin:10px auto 0;width:max-content;max-width:95%;font-size:9.5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:5px 11px;text-align:center}
+.cam-shutter{width:52px;height:52px;border-radius:50%;border:4px solid #fff;background:rgba(255,255,255,.25);margin:14px auto 2px}
+.cam-k{font-size:9.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--lgold);text-align:center;margin-bottom:6px}
+.cam-t{font-size:16px;font-weight:700;text-align:center}
+/* ── insta-style brand cards (typographic only — social card system, embedded) ── */
+.igc{position:relative;overflow:hidden;border-radius:26px;aspect-ratio:4/5;width:100%;max-width:470px;container-type:inline-size;box-shadow:0 26px 70px rgba(0,40,55,.20);isolation:isolate}
+.igc-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:8.5%;z-index:3}
+.igc.deep{background:radial-gradient(130% 95% at 18% 0%,#04455A 0%,#012733 58%);color:#fff}
+.igc.dawn{background:radial-gradient(140% 90% at 50% -15%,#FFFFFF 0%,#FDFBEA 55%,#F6F0B4 125%),#fff;color:var(--deep)}
+.igc .grain{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.07'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E")}
+.igc .ring{position:absolute;border-radius:50%;border:18px solid rgba(226,195,66,.13);border-width:4.3cqw;z-index:1;animation:phBreathe 7.5s ease-in-out infinite}
+.igc .r1{width:88cqw;height:88cqw;top:-36cqw;right:-30cqw}
+.igc .r2{width:64cqw;height:64cqw;bottom:-28cqw;left:-26cqw;border-color:rgba(13,166,178,.11);animation-delay:1.4s}
+.igc.dawn .r1{border-color:rgba(226,195,66,.18)}.igc.dawn .r2{border-color:rgba(13,166,178,.11)}
+.igc .glow{position:absolute;border-radius:50%;filter:blur(60px);z-index:0;pointer-events:none;animation:phDrift 14s ease-in-out infinite alternate}
+.igc .g-cool{width:52cqw;height:52cqw;background:rgba(13,166,178,.24);top:-16cqw;left:-14cqw;animation-delay:4s}
+.igc-brand{font-weight:700;font-size:13px;font-size:2.9cqw;letter-spacing:.5em}
+.igc-brand .o{color:var(--gold)}
+.igc.dawn .igc-brand{color:var(--teal)}
+.igc-mid{display:flex;flex-direction:column;gap:5.5cqw}
+.igc-k{font-size:11.5px;font-size:2.55cqw;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--cool)}
+.igc.dawn .igc-k{color:var(--teal)}
+.igc-h{font-weight:700;font-size:34px;font-size:8cqw;line-height:1.16;letter-spacing:-.01em}
+.igc-h i{font-style:italic;font-weight:300}
+.igc-h .hl{color:var(--gold)}.igc.dawn .igc-h .hl{color:var(--teal)}
+.igc-sub{font-size:13.5px;font-size:3.05cqw;font-weight:300;line-height:1.6;opacity:.92;max-width:34ch}
+.igc-bot{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-size:2.6cqw}
+.igc-bot .u{font-weight:600;color:var(--gold);letter-spacing:.04em}
+.igc.dawn .igc-bot .u{color:var(--teal)}
+.igc-bot .n{font-weight:300;opacity:.65}
+/* sections */
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--teal-10);color:var(--teal);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.11em;padding:5px 16px;border-radius:100px;margin-bottom:16px}
+.badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal)}
+.split{padding:var(--sec-y) 0}
+.split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.rev .wrap{direction:rtl}.split.rev .wrap>*{direction:ltr}
+.split-vis{display:flex;justify-content:center}
+.split-vis .igc{max-width:430px}
+.split-text h2{font-size:clamp(1.65rem,3vw,2.25rem);font-weight:700;line-height:1.18;color:var(--deep);margin-bottom:16px;letter-spacing:-.015em}
+.split-text h2 .ac{color:var(--teal)}
+.split-text p{font-size:.95rem;color:var(--body);line-height:1.78;max-width:52ch}
+.split-text p+p{margin-top:14px}
+.split-text .go{display:inline-flex;margin-top:22px;color:var(--teal);font-weight:600;font-size:.9rem;text-decoration:none}
+.split-text .go:hover{text-decoration:underline}
+.dark-sec{padding:var(--sec-y) 0;background:var(--deep);position:relative;overflow:hidden}
+.dark-sec .badge{background:rgba(226,195,66,.14);color:var(--gold)}.dark-sec .badge::before{background:var(--gold)}
+.sec-title{font-size:clamp(1.65rem,3vw,2.25rem);font-weight:700;color:var(--deep);margin-bottom:8px;letter-spacing:-.015em}
+.dark-sec .sec-title{color:#fff}
+.sec-sub{font-size:.95rem;color:var(--body);max-width:540px;margin-bottom:44px;line-height:1.7}
+.dark-sec .sec-sub{color:rgba(255,255,255,.6)}
+.dark-o{position:absolute;border-radius:50%;border:44px solid rgba(226,195,66,.06);width:560px;height:560px;top:-260px;right:-200px;pointer-events:none}
+.num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.num-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:32px 28px;transition:.3s}
+.num-card:hover{border-color:rgba(226,195,66,.2);transform:translateY(-3px)}
+.num-card .num{font-size:2.3rem;font-weight:700;color:rgba(226,195,66,.18);line-height:1;margin-bottom:12px}
+.num-card p{font-size:.88rem;color:rgba(255,255,255,.62);line-height:1.7}
+.num-card p strong{color:var(--gold);font-weight:600}
+.steps-sec{padding:var(--sec-y) 0;background:var(--snow)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:.3s}
+.step-card:hover{border-color:rgba(0,101,124,.15);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,40,55,.05)}
+.step-card .num{font-size:2.3rem;font-weight:700;color:rgba(0,101,124,.14);line-height:1;margin-bottom:12px}
+.step-card h3{font-size:.95rem;font-weight:700;color:var(--deep);margin-bottom:8px}
+.step-card p{font-size:.85rem;color:var(--body);line-height:1.7}
+footer{padding:44px 0 40px;background:var(--deep);border-top:2px solid var(--teal)}
+footer p{font-size:.82rem;color:rgba(255,255,255,.45);max-width:74ch;line-height:1.7;margin-bottom:10px}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+/* motion */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.anim{animation:fadeUp .6s ease-out forwards}.d1{animation-delay:.1s;opacity:0}.d2{animation-delay:.2s;opacity:0}.d3{animation-delay:.3s;opacity:0}.d4{animation-delay:.4s;opacity:0}
+.js .rv{opacity:0;transform:translateY(22px);transition:all .65s cubic-bezier(.22,1,.36,1)}
+.js .rv.vis{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+  .anim,.d1,.d2,.d3,.d4{animation:none;opacity:1}
+  .igc .ring,.igc .glow,.ph-ring,.ph-glow{animation:none}
+  .ph-slide{transition:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+/* responsive — desktop-first company default at ≥900px; stacked below */
+@media (max-width:899px){
+  :root{--sec-y:76px}
+  .nav-mid{display:none}
+  .hero{padding:calc(var(--nav-h) + 36px) 0 60px}
+  .hero .wrap,.split .wrap{grid-template-columns:1fr;gap:44px}
+  .split.rev .wrap{direction:ltr}
+  .phone-hero{order:-1}
+  .split-vis .igc{max-width:400px}
+  h1{max-width:none}
+  .num-grid,.steps-grid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 24px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="mark" href="#">Mask<span class="o">Fitter</span></a>
+    <ul class="nav-mid">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#fit">Fit first</a></li>
+      <li><a href="#not">What it's not</a></li>
+      <li><a href="https://ormasleep.com">Orma Sleep ↗</a></li>
+    </ul>
+    <div class="nav-end"><a href="https://maskfitter.pages.dev">Try the demo</a></div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="hero-tag anim d1">Consumer fit tool · Not medical advice</span>
+        <h1 class="anim d1">Find your <span class="gold">best-match</span> CPAP mask.</h1>
+        <p class="lead anim d2">MaskFitter is a consumer fit tool from Orma Sleep. A quick scan measures your face's fit geometry — size and shape, nothing else — and matches you to mask styles and sizes that suit it, so choosing or replacing a mask stops being guesswork. Product recommendations only; never medical advice.</p>
+        <div class="hero-btns anim d3">
+          <a class="btn-gold" href="https://maskfitter.pages.dev">Try the demo →</a>
+          <a class="btn-outline" href="#how">How it works</a>
+        </div>
+        <span class="cta-note anim d4">Demo build. Test checkout only — no real charges.</span>
+      </div>
+      <div class="phone-hero anim d2" aria-hidden="true">
+        <div class="ph-glow g1"></div><div class="ph-glow g2"></div>
+        <div class="ph-ring k1"></div><div class="ph-ring k2"></div>
+        <div class="phone">
+          <div class="ph-island"></div>
+          <div class="ph-screen">
+            <div class="ph-slide cam on">
+              <div class="ph-status lite"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="cam-k">MaskFitter · Step 1</div>
+              <div class="cam-t">Quick fit scan</div>
+              <div class="cam-mid"><div class="cam-oval"></div></div>
+              <div class="cam-cap">Center your face in the frame</div>
+              <div class="cam-chip">We measure fit geometry only — never a health assessment</div>
+              <div class="cam-shutter"></div>
+            </div>
+            <div class="ph-slide">
+              <div class="ph-status"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="app-bar"><span class="dot"></span>MaskFitter<small>fit results</small></div>
+              <div class="app-title">Your best matches</div>
+              <div class="app-sub">Mask styles and sizes matched to your fit geometry.</div>
+              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Nasal cushion · Size M<small>Great fit for your profile</small></div></div><div class="fitbar"><i style="width:92%"></i></div></div>
+              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Nasal pillow · Size S<small>Good fit — lighter frame</small></div></div><div class="fitbar"><i style="width:78%"></i></div></div>
+              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Full face · Size M<small>Good fit — fuller coverage</small></div></div><div class="fitbar"><i style="width:71%"></i></div></div>
+              <div class="app-btn">See match details</div>
+              <div class="app-note">Product recommendations only — not medical advice</div>
+            </div>
+            <div class="ph-slide">
+              <div class="ph-status"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="app-bar"><span class="dot"></span>MaskFitter<small>fit profile</small></div>
+              <div class="app-title">Your size</div>
+              <div class="bigsize">M <small>· nasal</small></div>
+              <div class="app-sub">Based on the fit geometry of your face.</div>
+              <div class="chips"><span>Cushion: nasal</span><span>Frame: standard</span><span>Headgear: M</span></div>
+              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Works across brands<small>Use your size when comparing masks from any supplier</small></div></div></div>
+              <div class="app-btn">Compare cushion types</div>
+              <div class="app-note">Fit &amp; comfort only — for medical questions, talk to your clinician</div>
+            </div>
+          </div>
+        </div>
+        <div class="ph-dots"><span class="on"></span><span></span><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-sec" id="how">
+    <div class="wrap">
+      <span class="badge rv">How it works</span>
+      <h2 class="sec-title rv">Scan. Match. Choose.</h2>
+      <p class="sec-sub rv">Three steps, all about fit.</p>
+      <div class="steps-grid">
+        <div class="step-card rv"><div class="num">1</div><h3>Scan.</h3><p>A quick scan measures the fit geometry of your face — size and shape, nothing else. It is never a health assessment.</p></div>
+        <div class="step-card rv"><div class="num">2</div><h3>Match.</h3><p>You get mask styles and sizes matched to your geometry — nasal, pillow, or full-face — as product recommendations.</p></div>
+        <div class="step-card rv"><div class="num">3</div><h3>Choose.</h3><p>Compare cushion types and sizes, then get your mask from the supplier you prefer. Your size works across brands.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split" id="fit">
+    <div class="wrap">
+      <div class="split-text rv">
+        <span class="badge">Fit first</span>
+        <h2>Why <span class="ac">fit</span> is the whole job</h2>
+        <p>A CPAP mask is something you wear all night, every night — and faces vary a lot more than mask sizing charts do. Getting the geometry right up front means fewer trial-and-error purchases and a mask you're comfortable in.</p>
+        <p>That's the entire scope of MaskFitter: fit and comfort. It helps people who already use — or are replacing — a CPAP mask pick one that suits their face. Nothing more.</p>
+      </div>
+      <div class="split-vis rv" aria-hidden="true">
+        <div class="igc dawn">
+          <div class="ring r1"></div><div class="ring r2"></div>
+          <div class="grain"></div>
+          <div class="igc-in">
+            <div class="igc-brand">MASK<span class="o">FITTER</span></div>
+            <div class="igc-mid">
+              <span class="igc-k">Fit first</span>
+              <div class="igc-h">Every face is <i class="hl">different</i>.</div>
+            </div>
+            <div class="igc-bot"><span class="u">by Orma Sleep</span><span class="n">fit &amp; comfort only</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-sec" id="not">
+    <div class="dark-o"></div>
+    <div class="wrap">
+      <span class="badge rv">Read this first</span>
+      <h2 class="sec-title rv">What MaskFitter is not</h2>
+      <p class="sec-sub rv">Three things we want to be unmissably clear about.</p>
+      <div class="num-grid">
+        <div class="num-card rv"><div class="num">01</div><p>It is <strong>not a medical device</strong>. It does not diagnose, screen for, or assess the risk of sleep apnea or any other condition.</p></div>
+        <div class="num-card rv"><div class="num">02</div><p>The scan is <strong>fit geometry only</strong>. It is never a health assessment — it measures sizing, not your health.</p></div>
+        <div class="num-card rv"><div class="num">03</div><p>It is <strong>not medical advice</strong>. For questions about your therapy or your mask prescription, talk to your clinician or supplier.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split rev" id="about">
+    <div class="wrap">
+      <div class="split-text rv">
+        <span class="badge">From Orma Sleep</span>
+        <h2>Strictly scoped, <span class="ac">honestly framed</span></h2>
+        <p>MaskFitter is an Orma Sleep tool, built under the same rule as everything we make: say only what the tool actually does. It recommends mask products by fit — it never makes a medical claim.</p>
+        <a class="go" href="https://ormasleep.com">Learn more about Orma Sleep →</a>
+      </div>
+      <div class="split-vis rv" aria-hidden="true">
+        <div class="igc deep">
+          <div class="glow g-cool"></div>
+          <div class="ring r1"></div><div class="ring r2"></div>
+          <div class="grain"></div>
+          <div class="igc-in">
+            <div class="igc-brand">MASK<span class="o">FITTER</span></div>
+            <div class="igc-mid">
+              <span class="igc-k">The scope</span>
+              <div class="igc-h">Fit, <i>not</i> diagnosis.<br><span class="hl">Ever.</span></div>
+            </div>
+            <div class="igc-bot"><span class="u">by Orma Sleep</span><span class="n">product recommendations only</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>MaskFitter is a consumer fit-and-comfort tool from Orma Sleep, Inc. It is not a medical device, it provides product recommendations only, and it is not medical advice. For medical questions, talk to a healthcare professional.</p>
+    <p>© 2026 Orma Sleep, Inc. · <a href="mailto:hello@ormasleep.com">hello@ormasleep.com</a> · <a href="https://maskfitter.pages.dev">Try the demo</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>8)},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.15});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('vis')});}
+  var slides=document.querySelectorAll('.ph-slide'),dots=document.querySelectorAll('.ph-dots span'),i=0;
+  if(slides.length&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!/[?&]still/.test(location.search)){
+    setInterval(function(){
+      slides[i].classList.remove('on');dots[i].classList.remove('on');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('on');dots[i].classList.add('on');
+    },3800);
+  }
+})();
+</script>
+
+</body>
+</html>
