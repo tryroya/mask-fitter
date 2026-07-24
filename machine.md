@@ -12,7 +12,9 @@ suit it.
 
 ## Try it
 
-Live demo: https://maskfitter.pages.dev
+Live demo: https://maskfitter.pages.dev — the free demo runs right in the browser: a quick scan,
+then mask styles and sizes matched to the face's fit geometry. Product recommendations only —
+never medical advice.
 
 ## Contact
 
