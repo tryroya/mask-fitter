@@ -52,7 +52,7 @@ h1 .gold{color:var(--gold)}
 .ph-ring{position:absolute;border-radius:50%;border:16px solid rgba(226,195,66,.10);z-index:0;animation:phBreathe 7.5s ease-in-out infinite}
 .ph-ring.k1{width:420px;height:420px;top:-90px;right:-70px}
 .ph-ring.k2{width:300px;height:300px;bottom:-60px;left:-60px;border-color:rgba(13,166,178,.09);animation-delay:1.4s}
-.phone{position:relative;width:min(300px,80vw);aspect-ratio:390/844;background:#0B1418;border-radius:48px;padding:11px;box-shadow:0 34px 90px rgba(0,40,55,.32),inset 0 0 0 2px rgba(255,255,255,.07);z-index:2}
+.phone{position:relative;aspect-ratio:390/844;background:#0B1418;border-radius:48px;padding:11px;box-shadow:0 34px 90px rgba(0,40,55,.32),inset 0 0 0 2px rgba(255,255,255,.07);z-index:2}
 .ph-island{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:84px;height:23px;border-radius:13px;background:#0B1418;z-index:6}
 .ph-screen{position:relative;width:100%;height:100%;border-radius:38px;overflow:hidden;background:var(--snow)}
 .ph-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s .7s;display:flex;flex-direction:column;padding:52px 16px 16px;background:var(--snow)}
@@ -182,6 +182,65 @@ footer a:hover{text-decoration:underline}
 @media (max-width:600px){
   .wrap{padding:0 24px}
 }
+
+/* ══ round-4 kit (Adrian 2026-07-24): voices slider · mini brand tiles · unified footer · hero-fit ══ */
+.tsl-sec{padding:60px 0}
+.tsl-wrap{max-width:1060px;margin:0 auto;padding:0 24px;display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.tsl-wrap{grid-template-columns:1.3fr .85fr}}
+.tsl-k{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#0DA6B2;margin-bottom:10px}
+.tsl-h{font-size:clamp(1.45rem,2.6vw,1.95rem);font-weight:700;color:#012733;line-height:1.22;margin-bottom:18px;letter-spacing:-.015em}
+.tsl-box{position:relative;min-height:158px}
+.tsl-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s .6s;margin:0}
+.tsl-slide.on{position:relative;opacity:1;visibility:visible;transition:opacity .6s ease}
+.tsl-slide blockquote{margin:0;font-size:clamp(1rem,1.55vw,1.18rem);line-height:1.62;color:#12303C;font-weight:500;max-width:52ch}
+.tsl-slide blockquote::before{content:"\201C";color:#E2C342;font-size:2.1em;line-height:0;vertical-align:-.32em;margin-right:5px;font-weight:700}
+.tsl-slide figcaption{margin-top:12px;font-size:.84rem;color:#4A6A74;font-weight:500}
+.tsl-dots{display:flex;gap:7px;margin-top:16px}
+.tsl-dots button{width:8px;height:8px;border-radius:99px;border:0;padding:0;background:rgba(0,101,124,.22);cursor:pointer;transition:.3s}
+.tsl-dots button.on{background:#00657C;width:22px}
+.tsl-cap{margin-top:14px;font-size:.7rem;color:#7A9BA8;max-width:46ch}
+.mtiles{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,150px));gap:14px;justify-content:center;padding:10px 0}
+.mtile{aspect-ratio:1;border-radius:20px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 14px 34px rgba(1,39,51,.16);transition:transform .35s}
+.mtile:nth-child(1){transform:rotate(-2.5deg)}
+.mtile:nth-child(2){transform:rotate(2deg) translateY(16px)}
+.mtile:nth-child(3){transform:rotate(-1.5deg) translateY(-4px);grid-column:1/-1;justify-self:center;width:min(150px,60%)}
+@media(hover:hover){.mtile:hover{transform:rotate(0) translateY(-4px)}}
+.mt-k{font-size:.54rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;opacity:.78}
+.mt-b{font-size:.92rem;font-weight:700;line-height:1.28;letter-spacing:-.01em}
+.mt-o{font-size:.5rem;font-weight:700;letter-spacing:.45em;opacity:.55}
+.mt-deep{background:radial-gradient(120% 70% at 50% 115%,rgba(226,195,66,.35),rgba(226,195,66,0) 60%),linear-gradient(180deg,#012733,#07536A);color:#fff}
+.mt-deep .mt-k{color:#F3ED86}
+.mt-gold{background:radial-gradient(130% 95% at 18% 0%,#EDD35F,#E2C342 60%);color:#012733}
+.mt-light{background:radial-gradient(140% 90% at 50% -15%,#fff,#FDFBEA 55%,#F6F0B4 125%);color:#012733;border:1px solid rgba(226,195,66,.4)}
+footer.ft2{background:linear-gradient(180deg,#012733,#01202B);color:#9FC4CC;margin-top:64px;padding:40px 0 26px;font-size:.82rem}
+.ft2-wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.ft2-top{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.ft2-brand{font-weight:700;font-size:1.05rem;color:#fff}
+.ft2-brand .o{color:#E2C342}
+.ft2-brand small{display:block;font-weight:400;font-size:.72rem;color:#9FC4CC;margin-top:3px}
+.ft2-links{display:flex;flex-wrap:wrap;gap:4px 18px}
+.ft2-links a{color:#CFE7EC;text-decoration:none}
+.ft2-links a:hover{color:#E2C342}
+.ft2-soc{display:flex;gap:14px}
+.ft2-soc a{color:rgba(255,255,255,.55);display:inline-flex;transition:color .25s}
+.ft2-soc a:hover{color:#E2C342}
+.ft2-legal{font-size:.74rem;line-height:1.6;color:#7FA6B0;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;max-width:76ch}
+.ft2-base{margin-top:12px;font-size:.74rem;color:#7FA6B0}
+.ft2-base a{color:#CFE7EC;text-decoration:none}
+.ft2-base a:hover{color:#E2C342}
+@media(prefers-reduced-motion:reduce){.tsl-slide{transition:none}}
+
+/* hero-fit */
+.hero{padding:calc(var(--nav-h) + clamp(14px,3.5dvh,44px)) 0 clamp(16px,3.5dvh,44px)}
+.hero p.lead{margin-bottom:20px}
+h1{margin-bottom:14px}
+.hero-tag{margin-bottom:14px}
+@media(min-width:900px) and (max-height:860px){h1{font-size:clamp(1.9rem,3.4vw,2.6rem)}.hero p.lead{font-size:.94rem;line-height:1.6}}
+.phone{height:min(52dvh,500px);width:auto}
+@media(max-width:899px){.phone{height:min(36dvh,340px)}.hero .wrap{gap:22px}}
+@media(max-height:720px) and (max-width:899px){.hero{padding:calc(var(--nav-h) + 10px) 0 14px}.hero .wrap{gap:12px}.hero-tag{margin-bottom:6px;font-size:.6rem}h1{font-size:1.42rem;margin-bottom:8px}.hero p.lead{font-size:.83rem;line-height:1.5;margin-bottom:10px}.hero-btns{gap:8px}.btn-gold,.btn-outline{padding:10px 20px;font-size:.84rem}.cta-note{margin-top:7px;font-size:.7rem}.phone{height:min(22dvh,220px)}.ph-dots{margin-top:8px}.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,104px))}.hero-visual .mtiles .mtile:nth-child(2){transform:rotate(2deg) translateY(8px)}}
+.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,160px))}
+@media(max-width:899px){.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,128px))}.hero-visual .mtiles .mtile:nth-child(3){display:none}}
 </style>
 </head>
 <body>
@@ -317,30 +376,14 @@ footer a:hover{text-decoration:underline}
         <a class="go" href="https://ormasleep.com">Learn more about Orma Sleep →</a>
       </div>
       <div class="split-vis rv" aria-hidden="true">
-        <div class="igc deep">
-          <div class="glow g-cool"></div>
-          <div class="ring r1"></div><div class="ring r2"></div>
-          <div class="grain"></div>
-          <div class="igc-in">
-            <div class="igc-brand">MASK<span class="o">FITTER</span></div>
-            <div class="igc-mid">
-              <span class="igc-k">The scope</span>
-              <div class="igc-h">Fit, <i>not</i> diagnosis.<br><span class="hl">Ever.</span></div>
-            </div>
-            <div class="igc-bot"><span class="u">by Orma Sleep</span><span class="n">product recommendations only</span></div>
-          </div>
-        </div>
+        <div class="mtiles" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">The drawer</span><span class="mt-b">Of masks that never fit</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Fit first</span><span class="mt-b">Comfort follows</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">Try it</span><span class="mt-b">Free live demo</span><span class="mt-o">ORMA</span></div></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>MaskFitter is a consumer fit-and-comfort tool from Orma Sleep, Inc. It is not a medical device, it provides product recommendations only, and it is not medical advice. For medical questions, talk to a healthcare professional.</p>
-    <p>© 2026 Orma Sleep, Inc. · <a href="mailto:hello@ormasleep.com">hello@ormasleep.com</a> · <a href="https://maskfitter.pages.dev">Try the demo</a> · <a href="machine.md">For AI agents</a></p>
-  </div>
-</footer>
+<section class="tsl-sec" id="voices"><div class="tsl-wrap"><div><div class="tsl-k">What we keep hearing</div><h2 class="tsl-h">The drawer of masks that never fit</h2><div class="tsl-box" id="tslbox"><figure class="tsl-slide on"><blockquote>Three masks in a drawer. Every one of them ‘fit’ in the store and leaked at home.</blockquote><figcaption>— Robert, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>Small, medium, wide — none of those words describe my actual face.</blockquote><figcaption>— Keiko, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>I stopped blaming myself for the leaks when I learned fit is geometry, not effort.</blockquote><figcaption>— Sofia, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>Matching by measurements first meant the second mask I tried was the one.</blockquote><figcaption>— Leon, CPAP user</figcaption></figure></div><div class="tsl-dots"><button class="on" aria-label="Quote 1"></button><button class="" aria-label="Quote 2"></button><button class="" aria-label="Quote 3"></button><button class="" aria-label="Quote 4"></button></div><div class="tsl-cap">Composite voices from mask-fit conversations — anonymized. Product-fit experiences only; not medical claims.</div></div><div class="mtiles" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">Fit is</span><span class="mt-b">Geometry, not guesswork</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Free</span><span class="mt-b">Live demo</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">Never</span><span class="mt-b">Medical advice</span><span class="mt-o">ORMA</span></div></div></div></section>
+<footer class="ft2"><div class="ft2-wrap"><div class="ft2-top"><div class="ft2-brand">Orma <span class="o">· MaskFitter</span><small>Find your best-match CPAP mask</small></div><nav class="ft2-links"><a href="#how">How it works</a><a href="https://maskfitter.pages.dev">Try the demo</a></nav><div class="ft2-soc"><a href="https://www.linkedin.com/company/ormasleep" target="_blank" rel="noopener" aria-label="Orma Sleep on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6V23H.2zM8.3 8h4.4v2.05h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.05 5.48 7.02V23h-4.6v-7.28c0-1.74-.03-3.97-2.42-3.97-2.42 0-2.79 1.89-2.79 3.84V23H8.3z"/></svg></a><a href="https://www.instagram.com/orma.sleep/" target="_blank" rel="noopener" aria-label="Orma Sleep on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a><a href="mailto:hello@ormasleep.com" aria-label="Email Orma Sleep"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a></div></div><p class="ft2-legal">MaskFitter is a consumer fit-and-comfort tool from Orma Sleep, Inc. It is not a medical device, it provides product recommendations only, and it is not medical advice. For medical questions, talk to a healthcare professional.</p><div class="ft2-base">© 2026 Orma Sleep, Inc. · San Francisco, CA · <a href="mailto:hello@ormasleep.com">hello@ormasleep.com</a> · <a href="machine.md">For AI agents</a></div></div></footer>
 
 <script>
 (function(){
@@ -361,5 +404,16 @@ footer a:hover{text-decoration:underline}
 })();
 </script>
 
+<script>
+function tslInit(){var b=document.getElementById('tslbox');if(!b)return;
+ var s=b.querySelectorAll('.tsl-slide'),d=document.querySelectorAll('.tsl-dots button'),i=0,t=null;
+ function go(n){if(!document.body.contains(b)){clearInterval(t);return;}s[i].classList.remove('on');d[i].classList.remove('on');i=(n+s.length)%s.length;s[i].classList.add('on');d[i].classList.add('on');}
+ function arm(){if(t)clearInterval(t);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){go(i+1)},7000);}
+ d.forEach(function(x,n){x.addEventListener('click',function(){go(n);arm();})});
+ var sec=b.closest('.tsl-sec');
+ sec.addEventListener('mouseenter',function(){if(t)clearInterval(t);t=null;});
+ sec.addEventListener('mouseleave',arm);
+ arm();}
+tslInit();</script>
 </body>
 </html>
