@@ -236,11 +236,45 @@ footer.ft2{background:linear-gradient(180deg,#012733,#01202B);color:#9FC4CC;marg
 h1{margin-bottom:14px}
 .hero-tag{margin-bottom:14px}
 @media(min-width:900px) and (max-height:860px){h1{font-size:clamp(1.9rem,3.4vw,2.6rem)}.hero p.lead{font-size:.94rem;line-height:1.6}}
-.phone{height:min(52dvh,500px);width:auto}
-@media(max-width:899px){.phone{height:min(36dvh,340px)}.hero .wrap{gap:22px}}
-@media(max-height:720px) and (max-width:899px){.hero{padding:calc(var(--nav-h) + 10px) 0 14px}.hero .wrap{gap:12px}.hero-tag{margin-bottom:6px;font-size:.6rem}h1{font-size:1.42rem;margin-bottom:8px}.hero p.lead{font-size:.83rem;line-height:1.5;margin-bottom:10px}.hero-btns{gap:8px}.btn-gold,.btn-outline{padding:10px 20px;font-size:.84rem}.cta-note{margin-top:7px;font-size:.7rem}.phone{height:min(22dvh,220px)}.ph-dots{margin-top:8px}.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,104px))}.hero-visual .mtiles .mtile:nth-child(2){transform:rotate(2deg) translateY(8px)}}
+.phone{height:min(64dvh,620px);width:auto}
+@media(max-width:899px){.phone{height:min(44dvh,420px)}.hero .wrap{gap:18px}}
+@media(max-height:720px) and (max-width:899px){.hero{padding:calc(var(--nav-h) + 10px) 0 14px}.hero .wrap{gap:12px}.hero-tag{margin-bottom:6px;font-size:.6rem}h1{font-size:1.42rem;margin-bottom:8px}.hero p.lead{font-size:.83rem;line-height:1.5;margin-bottom:10px}.hero-btns{gap:8px}.btn-gold,.btn-outline{padding:10px 20px;font-size:.84rem}.cta-note{margin-top:7px;font-size:.7rem}.phone{height:min(27dvh,260px)}.ph-dots{margin-top:8px}.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,104px))}.hero-visual .mtiles .mtile:nth-child(2){transform:rotate(2deg) translateY(8px)}}
 .hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,160px))}
 @media(max-width:899px){.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,128px))}.hero-visual .mtiles .mtile:nth-child(3){display:none}}
+
+/* ── card patterns B/C/D (each pattern used at most once per site) ── */
+.mstrips{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+.mstrips .mtile{aspect-ratio:auto;flex-direction:row;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;border-radius:16px;transform:none}
+.mstrips .mtile:nth-child(1){margin-right:34px}
+.mstrips .mtile:nth-child(2){margin-left:34px}
+.mstrips .mtile:nth-child(3){margin-right:14px;margin-left:14px;width:auto}
+.mstrips .mt-b{font-size:.88rem;text-align:right}
+.mstrips .mt-o{display:none}
+@media(hover:hover){.mstrips .mtile:hover{transform:translateX(4px)}}
+.mfan{position:relative;height:250px;max-width:340px;margin:0 auto;width:100%}
+.mfan .mtile{position:absolute;left:50%;top:50%;width:172px;transform:translate(-50%,-50%) rotate(0);transition:transform .45s}
+.mfan .mtile:nth-child(1){transform:translate(-88%,-46%) rotate(-9deg);filter:brightness(.96)}
+.mfan .mtile:nth-child(2){transform:translate(-12%,-54%) rotate(8deg);filter:brightness(.98)}
+.mfan .mtile:nth-child(3){transform:translate(-50%,-50%) rotate(-1deg);z-index:2;box-shadow:0 22px 50px rgba(1,39,51,.24)}
+@media(hover:hover){.mfan:hover .mtile:nth-child(1){transform:translate(-98%,-48%) rotate(-12deg)}.mfan:hover .mtile:nth-child(2){transform:translate(-2%,-56%) rotate(11deg)}}
+.mrow{display:grid;grid-template-columns:1fr 1.55fr 1fr;gap:12px;align-items:center}
+.mrow .mtile{transform:none;border-radius:18px}
+.mrow .mtile:nth-child(2){aspect-ratio:auto;min-height:118px}
+.mrow .mtile:nth-child(1),.mrow .mtile:nth-child(3){padding:12px}
+.mrow .mt-o{display:none}
+@media(hover:hover){.mrow .mtile:hover{transform:translateY(-3px)}}
+/* ── FAQ accordion ── */
+.faq-sec{padding:56px 0}
+.faq-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.faq-k{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#0DA6B2;margin-bottom:10px}
+.faq-h{font-size:clamp(1.45rem,2.6vw,1.95rem);font-weight:700;color:#012733;line-height:1.22;margin-bottom:20px;letter-spacing:-.015em}
+details.fq{border-bottom:1px solid rgba(0,101,124,.12)}
+details.fq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 2px;font-weight:600;font-size:.96rem;color:#12303C}
+details.fq summary::-webkit-details-marker{display:none}
+details.fq summary::after{content:"";width:9px;height:9px;border-right:2px solid #00657C;border-bottom:2px solid #00657C;transform:rotate(45deg);transition:transform .25s;flex:0 0 auto;margin-right:4px}
+details.fq[open] summary::after{transform:rotate(225deg)}
+details.fq .fq-a{padding:0 26px 16px 2px;font-size:.9rem;line-height:1.65;color:#3A5C68;max-width:64ch}
+@media(hover:hover){details.fq summary:hover{color:#00657C}}
 </style>
 </head>
 <body>
@@ -337,18 +371,7 @@ h1{margin-bottom:14px}
         <p>That's the entire scope of MaskFitter: fit and comfort. It helps people who already use — or are replacing — a CPAP mask pick one that suits their face. Nothing more.</p>
       </div>
       <div class="split-vis rv" aria-hidden="true">
-        <div class="igc dawn">
-          <div class="ring r1"></div><div class="ring r2"></div>
-          <div class="grain"></div>
-          <div class="igc-in">
-            <div class="igc-brand">MASK<span class="o">FITTER</span></div>
-            <div class="igc-mid">
-              <span class="igc-k">Fit first</span>
-              <div class="igc-h">Every face is <i class="hl">different</i>.</div>
-            </div>
-            <div class="igc-bot"><span class="u">by Orma Sleep</span><span class="n">fit &amp; comfort only</span></div>
-          </div>
-        </div>
+        <div class="mtiles" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">Fit first</span><span class="mt-b">Every face is different</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Measured</span><span class="mt-b">Size and shape, nothing else</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">By Orma Sleep</span><span class="mt-b">Fit &amp; comfort only</span><span class="mt-o">ORMA</span></div></div>
       </div>
     </div>
   </section>
@@ -376,14 +399,14 @@ h1{margin-bottom:14px}
         <a class="go" href="https://ormasleep.com">Learn more about Orma Sleep →</a>
       </div>
       <div class="split-vis rv" aria-hidden="true">
-        <div class="mtiles" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">The drawer</span><span class="mt-b">Of masks that never fit</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Fit first</span><span class="mt-b">Comfort follows</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">Try it</span><span class="mt-b">Free live demo</span><span class="mt-o">ORMA</span></div></div>
+        <div class="mstrips" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">The drawer</span><span class="mt-b">Of masks that never fit</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Fit first</span><span class="mt-b">Comfort follows</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">Try it</span><span class="mt-b">Free live demo</span><span class="mt-o">ORMA</span></div></div>
       </div>
     </div>
   </section>
 </main>
 
-<section class="tsl-sec" id="voices"><div class="tsl-wrap"><div><div class="tsl-k">What we keep hearing</div><h2 class="tsl-h">The drawer of masks that never fit</h2><div class="tsl-box" id="tslbox"><figure class="tsl-slide on"><blockquote>Three masks in a drawer. Every one of them ‘fit’ in the store and leaked at home.</blockquote><figcaption>— Robert, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>Small, medium, wide — none of those words describe my actual face.</blockquote><figcaption>— Keiko, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>I stopped blaming myself for the leaks when I learned fit is geometry, not effort.</blockquote><figcaption>— Sofia, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>Matching by measurements first meant the second mask I tried was the one.</blockquote><figcaption>— Leon, CPAP user</figcaption></figure></div><div class="tsl-dots"><button class="on" aria-label="Quote 1"></button><button class="" aria-label="Quote 2"></button><button class="" aria-label="Quote 3"></button><button class="" aria-label="Quote 4"></button></div><div class="tsl-cap">Composite voices from mask-fit conversations — anonymized. Product-fit experiences only; not medical claims.</div></div><div class="mtiles" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">Fit is</span><span class="mt-b">Geometry, not guesswork</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Free</span><span class="mt-b">Live demo</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">Never</span><span class="mt-b">Medical advice</span><span class="mt-o">ORMA</span></div></div></div></section>
-<footer class="ft2"><div class="ft2-wrap"><div class="ft2-top"><div class="ft2-brand">Orma <span class="o">· MaskFitter</span><small>Find your best-match CPAP mask</small></div><nav class="ft2-links"><a href="#how">How it works</a><a href="https://maskfitter.pages.dev">Try the demo</a></nav><div class="ft2-soc"><a href="https://www.linkedin.com/company/ormasleep" target="_blank" rel="noopener" aria-label="Orma Sleep on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6V23H.2zM8.3 8h4.4v2.05h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.05 5.48 7.02V23h-4.6v-7.28c0-1.74-.03-3.97-2.42-3.97-2.42 0-2.79 1.89-2.79 3.84V23H8.3z"/></svg></a><a href="https://www.instagram.com/orma.sleep/" target="_blank" rel="noopener" aria-label="Orma Sleep on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a><a href="mailto:hello@ormasleep.com" aria-label="Email Orma Sleep"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a></div></div><p class="ft2-legal">MaskFitter is a consumer fit-and-comfort tool from Orma Sleep, Inc. It is not a medical device, it provides product recommendations only, and it is not medical advice. For medical questions, talk to a healthcare professional.</p><div class="ft2-base">© 2026 Orma Sleep, Inc. · San Francisco, CA · <a href="mailto:hello@ormasleep.com">hello@ormasleep.com</a> · <a href="machine.md">For AI agents</a></div></div></footer>
+<section class="tsl-sec" id="voices"><div class="tsl-wrap"><div><div class="tsl-k">What we keep hearing</div><h2 class="tsl-h">The drawer of masks that never fit</h2><div class="tsl-box" id="tslbox"><figure class="tsl-slide on"><blockquote>Three masks in a drawer. Every one of them ‘fit’ in the store and leaked at home.</blockquote><figcaption>— Robert, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>Small, medium, wide — none of those words describe my actual face.</blockquote><figcaption>— Keiko, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>I stopped blaming myself for the leaks when I learned fit is geometry, not effort.</blockquote><figcaption>— Sofia, CPAP user</figcaption></figure><figure class="tsl-slide"><blockquote>Matching by measurements first meant the second mask I tried was the one.</blockquote><figcaption>— Leon, CPAP user</figcaption></figure></div><div class="tsl-dots"><button class="on" aria-label="Quote 1"></button><button class="" aria-label="Quote 2"></button><button class="" aria-label="Quote 3"></button><button class="" aria-label="Quote 4"></button></div><div class="tsl-cap">Composite voices from mask-fit conversations — anonymized. Product-fit experiences only; not medical claims.</div></div><div class="mfan" aria-hidden="true"><div class="mtile mt-deep"><span class="mt-k">Fit is</span><span class="mt-b">Geometry, not guesswork</span><span class="mt-o">ORMA</span></div><div class="mtile mt-gold"><span class="mt-k">Free</span><span class="mt-b">Live demo</span><span class="mt-o">ORMA</span></div><div class="mtile mt-light"><span class="mt-k">Never</span><span class="mt-b">Medical advice</span><span class="mt-o">ORMA</span></div></div></div></section>
+<section class="faq-sec" id="faq"><div class="faq-wrap"><div class="faq-k">Before you scan</div><h2 class="faq-h">Common questions</h2><details class="fq"><summary>What does the scan measure?</summary><div class="fq-a">Your face's fit geometry — size and shape. Nothing else.</div></details><details class="fq"><summary>Is this medical advice?</summary><div class="fq-a">No. MaskFitter gives product recommendations only. For medical questions, talk to a healthcare professional.</div></details><details class="fq"><summary>Which masks can it match?</summary><div class="fq-a">Common styles and sizes across the major mask types — nasal, pillow, and full-face.</div></details><details class="fq"><summary>Do I need special equipment?</summary><div class="fq-a">No — the free demo runs right in your browser.</div></details><details class="fq"><summary>Will the right fit stop my leaks?</summary><div class="fq-a">Fit is a big part of comfort and seal, but no tool can promise zero leaks. A better-matched mask is a better starting point.</div></details><details class="fq"><summary>Does MaskFitter use my CPAP therapy data?</summary><div class="fq-a">No. It's a standalone fit tool — it doesn't read or use any therapy data.</div></details></div></section><footer class="ft2"><div class="ft2-wrap"><div class="ft2-top"><div class="ft2-brand">Orma <span class="o">· MaskFitter</span><small>Find your best-match CPAP mask</small></div><nav class="ft2-links"><a href="#how">How it works</a><a href="https://maskfitter.pages.dev">Try the demo</a></nav><div class="ft2-soc"><a href="https://www.linkedin.com/company/ormasleep" target="_blank" rel="noopener" aria-label="Orma Sleep on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6V23H.2zM8.3 8h4.4v2.05h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.05 5.48 7.02V23h-4.6v-7.28c0-1.74-.03-3.97-2.42-3.97-2.42 0-2.79 1.89-2.79 3.84V23H8.3z"/></svg></a><a href="https://www.instagram.com/orma.sleep/" target="_blank" rel="noopener" aria-label="Orma Sleep on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a><a href="mailto:hello@ormasleep.com" aria-label="Email Orma Sleep"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a></div></div><p class="ft2-legal">MaskFitter is a consumer fit-and-comfort tool from Orma Sleep, Inc. It is not a medical device, it provides product recommendations only, and it is not medical advice. For medical questions, talk to a healthcare professional.</p><div class="ft2-base">© 2026 Orma Sleep, Inc. · San Francisco, CA · <a href="mailto:hello@ormasleep.com">hello@ormasleep.com</a> · <a href="machine.md">For AI agents</a></div></div></footer>
 
 <script>
 (function(){
@@ -408,7 +431,7 @@ h1{margin-bottom:14px}
 function tslInit(){var b=document.getElementById('tslbox');if(!b)return;
  var s=b.querySelectorAll('.tsl-slide'),d=document.querySelectorAll('.tsl-dots button'),i=0,t=null;
  function go(n){if(!document.body.contains(b)){clearInterval(t);return;}s[i].classList.remove('on');d[i].classList.remove('on');i=(n+s.length)%s.length;s[i].classList.add('on');d[i].classList.add('on');}
- function arm(){if(t)clearInterval(t);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(function(){go(i+1)},7000);}
+ function arm(){if(t)clearInterval(t);t=setInterval(function(){go(i+1)},7000);}
  d.forEach(function(x,n){x.addEventListener('click',function(){go(n);arm();})});
  var sec=b.closest('.tsl-sec');
  sec.addEventListener('mouseenter',function(){if(t)clearInterval(t);t=null;});
