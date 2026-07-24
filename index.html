@@ -157,7 +157,7 @@ footer a:hover{text-decoration:underline}
 /* motion */
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
 .anim{animation:fadeUp .6s ease-out forwards}.d1{animation-delay:.1s;opacity:0}.d2{animation-delay:.2s;opacity:0}.d3{animation-delay:.3s;opacity:0}.d4{animation-delay:.4s;opacity:0}
-.js .rv{opacity:0;transform:translateY(22px);transition:all .65s cubic-bezier(.22,1,.36,1)}
+.js .rv{opacity:1;transform:none} /* scroll-gated fade-ins removed per vibe-code guide (Adrian 2026-07-24): below-fold content is visible by default */
 .js .rv.vis{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){
   .anim,.d1,.d2,.d3,.d4{animation:none;opacity:1}
