@@ -236,9 +236,9 @@ footer.ft2{background:linear-gradient(180deg,#012733,#01202B);color:#9FC4CC;marg
 h1{margin-bottom:14px}
 .hero-tag{margin-bottom:14px}
 @media(min-width:900px) and (max-height:860px){h1{font-size:clamp(1.9rem,3.4vw,2.6rem)}.hero p.lead{font-size:.94rem;line-height:1.6}}
-.phone{height:min(64dvh,620px);width:auto}
-@media(max-width:899px){.phone{height:min(44dvh,420px)}.hero .wrap{gap:18px}}
-@media(max-height:720px) and (max-width:899px){.hero{padding:calc(var(--nav-h) + 10px) 0 14px}.hero .wrap{gap:12px}.hero-tag{margin-bottom:6px;font-size:.6rem}h1{font-size:1.42rem;margin-bottom:8px}.hero p.lead{font-size:.83rem;line-height:1.5;margin-bottom:10px}.hero-btns{gap:8px}.btn-gold,.btn-outline{padding:10px 20px;font-size:.84rem}.cta-note{margin-top:7px;font-size:.7rem}.phone{height:min(27dvh,260px)}.ph-dots{margin-top:8px}.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,104px))}.hero-visual .mtiles .mtile:nth-child(2){transform:rotate(2deg) translateY(8px)}}
+.phone{height:min(67dvh,650px);width:auto}
+@media(max-width:899px){.phone{height:min(52dvh,500px)}.hero .wrap{gap:18px}}
+@media(max-height:720px) and (max-width:899px){.hero{padding:calc(var(--nav-h) + 10px) 0 14px}.hero .wrap{gap:12px}.hero-tag{margin-bottom:6px;font-size:.6rem}h1{font-size:1.42rem;margin-bottom:8px}.hero p.lead{font-size:.83rem;line-height:1.5;margin-bottom:10px}.hero-btns{gap:8px}.btn-gold,.btn-outline{padding:10px 20px;font-size:.84rem}.cta-note{margin-top:7px;font-size:.7rem}.phone{height:clamp(215px,30dvh,290px)}.ph-dots{margin-top:8px}.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,104px))}.hero-visual .mtiles .mtile:nth-child(2){transform:rotate(2deg) translateY(8px)}}
 .hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,160px))}
 @media(max-width:899px){.hero-visual .mtiles{grid-template-columns:repeat(2,minmax(0,128px))}.hero-visual .mtiles .mtile:nth-child(3){display:none}}
 
@@ -280,6 +280,48 @@ details.fq .fq-a{padding:0 26px 16px 2px;font-size:.9rem;line-height:1.65;color:
 .cta-sec .sec-sub{margin:0 auto 26px}
 
 
+
+/* ── in-phone type scales with the device (container query) + bigger phone ── */
+.ph-screen{container-type:inline-size}
+.ph-status{font-size:4.9cqw}
+.app-bar{font-size:5.6cqw}.app-bar small{font-size:4.25cqw}
+.ph-prog .lb{font-size:4.25cqw}
+.app-title{font-size:7.4cqw}
+.app-sub{font-size:4.7cqw}
+.app-upload{font-size:5.2cqw}.app-upload small{font-size:4.25cqw}
+.app-tags span{font-size:4cqw}
+.app-btn{font-size:5.6cqw}
+.app-note{font-size:4.25cqw}
+.app-row{font-size:4.9cqw}.app-row small{font-size:4.25cqw}
+.app-row .tick{width:7.6cqw;height:7.6cqw;font-size:4.5cqw}
+.app-bigcheck{width:27cqw;height:27cqw;font-size:12.5cqw}
+.ph-sig{font-size:11.6cqw}.ph-sig+small{font-size:4cqw}
+.cam-k{font-size:4.25cqw}.cam-t{font-size:7.1cqw}.cam-cap{font-size:4.9cqw}.cam-chip{font-size:4.25cqw}
+/* fan spread — nothing covered (Adrian 07-24) */
+.mfan{height:230px;max-width:460px}
+.mfan .mtile{width:136px;padding:11px}
+.mfan .mtile:nth-child(1){transform:translate(-152%,-50%) rotate(-6deg)}
+.mfan .mtile:nth-child(2){transform:translate(52%,-50%) rotate(6deg)}
+.mfan .mtile:nth-child(3){transform:translate(-50%,-46%) rotate(0)}
+@media(hover:hover){.mfan:hover .mtile:nth-child(1){transform:translate(-158%,-52%) rotate(-8deg)}.mfan:hover .mtile:nth-child(2){transform:translate(58%,-52%) rotate(8deg)}}
+
+/* scale in-phone paddings/margins with device too */
+.ph-slide{padding:15cqw 4.5cqw 4.5cqw}
+.app-card{padding:3cqw 3.4cqw;margin-top:2.6cqw;border-radius:3.7cqw}
+.app-btn{padding:3.4cqw;border-radius:3.4cqw}
+.app-upload{padding:4.5cqw 3.4cqw;margin-top:2.6cqw;border-radius:3.7cqw}
+.app-tags{margin-top:2.6cqw;gap:1.5cqw}.app-tags span{padding:.9cqw 2cqw;border-radius:1.7cqw}
+.app-bar{margin-bottom:2.8cqw}.ph-prog{margin-bottom:2.8cqw}
+.app-note{margin-top:2.3cqw}
+.app-bigcheck{margin:5.6cqw auto 2.8cqw}
+.ph-slide.cam .cam-mid{min-height:0}
+.cam-oval{max-height:100%;width:56%}
+.cam-chip{padding:1.4cqw 3cqw;margin-top:2.8cqw}
+.cam-shutter{width:14cqw;height:14cqw;margin:3.6cqw auto .6cqw}
+.bigsize{font-size:11cqw}
+.ph-slide .chips{gap:1.6cqw;margin-top:2.6cqw}
+.ph-slide .chips span{font-size:3.8cqw;padding:1.6cqw 2.6cqw}
+.fitbar{margin-top:1.8cqw}
 </style>
 </head>
 <body>
@@ -322,17 +364,16 @@ details.fq .fq-a{padding:0 26px 16px 2px;font-size:.9rem;line-height:1.65;color:
               <div class="cam-t">Quick fit scan</div>
               <div class="cam-mid"><div class="cam-oval"></div></div>
               <div class="cam-cap">Center your face in the frame</div>
-              <div class="cam-chip">We measure fit geometry only — never a health assessment</div>
+              <div class="cam-chip">Fit geometry only — never a health assessment</div>
               <div class="cam-shutter"></div>
             </div>
             <div class="ph-slide">
               <div class="ph-status"><span>9:41</span><span>●●● ▮</span></div>
               <div class="app-bar"><span class="dot"></span>MaskFitter<small>fit results</small></div>
               <div class="app-title">Your best matches</div>
-              <div class="app-sub">Mask styles and sizes matched to your fit geometry.</div>
-              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Nasal cushion · Size M<small>Great fit for your profile</small></div></div><div class="fitbar"><i style="width:92%"></i></div></div>
-              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Nasal pillow · Size S<small>Good fit — lighter frame</small></div></div><div class="fitbar"><i style="width:78%"></i></div></div>
-              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Full face · Size M<small>Good fit — fuller coverage</small></div></div><div class="fitbar"><i style="width:71%"></i></div></div>
+              <div class="app-sub">Matched to your fit geometry.</div>
+              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Nasal cushion · Size M<small>Great fit</small></div></div><div class="fitbar"><i style="width:92%"></i></div></div>
+              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Nasal pillow · Size S<small>Good fit · lighter</small></div></div><div class="fitbar"><i style="width:78%"></i></div></div>
               <div class="app-btn">See match details</div>
               <div class="app-note">Product recommendations only — not medical advice</div>
             </div>
@@ -341,11 +382,10 @@ details.fq .fq-a{padding:0 26px 16px 2px;font-size:.9rem;line-height:1.65;color:
               <div class="app-bar"><span class="dot"></span>MaskFitter<small>fit profile</small></div>
               <div class="app-title">Your size</div>
               <div class="bigsize">M <small>· nasal</small></div>
-              <div class="app-sub">Based on the fit geometry of your face.</div>
+              <div class="app-sub">From your fit geometry.</div>
               <div class="chips"><span>Cushion: nasal</span><span>Frame: standard</span><span>Headgear: M</span></div>
-              <div class="app-card"><div class="app-row"><span class="tick">✓</span><div>Works across brands<small>Use your size when comparing masks from any supplier</small></div></div></div>
               <div class="app-btn">Compare cushion types</div>
-              <div class="app-note">Fit &amp; comfort only — for medical questions, talk to your clinician</div>
+              <div class="app-note">Fit &amp; comfort only — never medical advice</div>
             </div>
           </div>
         </div>
